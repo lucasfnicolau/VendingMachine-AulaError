@@ -76,10 +76,11 @@ class VendingMachine {
     }
 
     func getTroco() -> Double {
-        let money = self.money
-        self.money = 0.0
+        defer {
+            self.money = 0.0
+        }
 
-        return money
+        return self.money
     }
 }
 
