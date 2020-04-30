@@ -58,7 +58,6 @@ class VendingMachine {
 
         guard product.amount > 0 else { throw VendingMachineError.productUnavailable }
 
-
         guard product.price <= self.money else { throw VendingMachineError.insufficientFunds }
 
         self.money -= product.price
